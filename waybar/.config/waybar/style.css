@@ -1,0 +1,63 @@
+/* ============================================================
+ *  Waybar — Catppuccin Mocha (dark)
+ * ============================================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+/* dark "pill" modules */
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#tray {
+    background: #11111b;
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin: 0 3px;
+}
+
+/* workspaces */
+#workspaces button {
+    color: #6c7086;
+    padding: 0 6px;
+    margin: 2px 2px;
+    border-radius: 8px;
+}
+#workspaces button.active {
+    color: #11111b;
+    background: #cba6f7;
+}
+#workspaces button.urgent {
+    color: #11111b;
+    background: #f38ba8;
+}
+#workspaces button:hover {
+    color: #cdd6f4;
+    background: #313244;
+}
+
+/* accent colours per module */
+#clock      { color: #cba6f7; }
+#pulseaudio { color: #f9e2af; }
+#network    { color: #94e2d5; }
+#cpu        { color: #89b4fa; }
+#memory     { color: #a6e3a1; }
+#window     { color: #bac2de; }
+
+#pulseaudio.muted { color: #6c7086; }
+
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
