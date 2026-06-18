@@ -1,0 +1,16 @@
+# --- never commit secrets / sensitive data ---
+*.key
+*.pem
+*_history
+.ssh/
+.gnupg/
+.claude.json
+*token*
+*secret*
+*password*
+
+# --- noise ---
+*.zwc
+.zcompdump*
+*.log
+__pycache__/

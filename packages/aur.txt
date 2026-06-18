@@ -1,0 +1,6 @@
+nvidia-580xx-dkms
+nvidia-580xx-utils
+opencl-nvidia-580xx
+yay
+yay-debug
+zen-browser-bin
