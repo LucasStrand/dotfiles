@@ -10,7 +10,7 @@ launch() {
     exec kitty --class "$CLASS" \
         -o font_size=10 \
         -o window_padding_width=14 \
-        sh -c "$HOME/.local/bin/keybinds; read -rsn1 _"
+        sh -c "$HOME/.local/bin/keybinds; read -rsn1 -t 60 _"
 }
 
 case "$1" in
