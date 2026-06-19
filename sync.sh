@@ -10,7 +10,9 @@ copy ~/.config/hypr/hyprland.lua      hypr/.config/hypr/hyprland.lua
 copy ~/.config/hypr/hyprpaper.conf    hypr/.config/hypr/hyprpaper.conf
 copy ~/.config/hypr/wallpaper.sh      hypr/.config/hypr/wallpaper.sh
 copy ~/.config/hypr/spotlight.sh      hypr/.config/hypr/spotlight.sh
+copy ~/.config/hypr/cheatsheet.sh     hypr/.config/hypr/cheatsheet.sh
 copy ~/.config/hypr/keybind-help.sh   hypr/.config/hypr/keybind-help.sh
+copy ~/.local/bin/keybinds            bin/.local/bin/keybinds
 copy ~/.config/kitty/kitty.conf       kitty/.config/kitty/kitty.conf
 copy ~/.config/waybar/config.jsonc    waybar/.config/waybar/config.jsonc
 copy ~/.config/waybar/style.css       waybar/.config/waybar/style.css
