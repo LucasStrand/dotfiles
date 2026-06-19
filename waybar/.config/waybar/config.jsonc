@@ -6,90 +6,107 @@
     "margin-top": 6,
     "margin-left": 10,
     "margin-right": 10,
-
-    "modules-left": ["hyprland/workspaces", "mpris", "custom/weather", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["group/stats", "pulseaudio", "network", "tray", "custom/power"],
-
+    "modules-left": [
+        "hyprland/workspaces",
+        "mpris",
+        "custom/weather",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "group/stats",
+        "pulseaudio",
+        "network",
+        "tray",
+        "custom/power"
+    ],
     "hyprland/workspaces": {
         "format": "{id}",
         "on-click": "activate"
     },
-
     "mpris": {
         "format": "<span color='#a6e3a1'>{player_icon}</span>  {dynamic}",
         "format-paused": "<span color='#a6e3a1'>{status_icon}</span>  {dynamic}",
-        "player-icons": { "default": "", "spotify": "" },
-        "status-icons": { "paused": "" },
-        "dynamic-order": ["title", "artist"],
+        "player-icons": {
+            "default": "",
+            "spotify": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "dynamic-order": [
+            "title",
+            "artist"
+        ],
         "max-length": 36,
         "tooltip": false
     },
-
     "custom/weather": {
         "exec": "/home/shellwalker/.config/waybar/scripts/weather.sh",
         "interval": 900,
         "format": "{}",
         "tooltip": false
     },
-
     "clock": {
-        "format": "{:%a %d/%b  %H:%M}",
-        "format-alt": "{:%H:%M:%S}",
+        "format": "  {:%a %d/%b  %H:%M}",
+        "format-alt": "  {:%H:%M:%S}",
         "tooltip-format": "<tt>{calendar}</tt>"
     },
-
     "hyprland/window": {
-        "format": "  {title}",
+        "format": "  {title}",
         "max-length": 40,
         "separate-outputs": true
     },
-
     "group/stats": {
         "orientation": "horizontal",
-        "modules": ["cpu", "temperature", "memory"]
+        "modules": [
+            "cpu",
+            "temperature",
+            "memory"
+        ]
     },
-
     "cpu": {
-        "format": "  {usage}%",
+        "format": "  {usage}%",
         "interval": 2,
         "tooltip": false
     },
-
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
         "critical-threshold": 90,
-        "format": "  {temperatureC}°C",
+        "format": "  {temperatureC}°C",
         "tooltip": false
     },
-
     "memory": {
-        "format": "  {percentage}%",
+        "format": "  {percentage}%",
         "interval": 5,
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
     },
-
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-        "format-muted": "  muted",
-        "format-icons": { "default": ["", "", ""] },
+        "format-muted": "  muted",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
         "scroll-step": 5,
         "on-click": "pavucontrol"
     },
-
     "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ifname}",
-        "format-disconnected": "  offline",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "  offline",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
-
     "tray": {
         "spacing": 10
     },
-
     "custom/power": {
-        "format": "  shellwalker",
+        "format": "  shellwalker",
         "tooltip": false
     }
 }
