@@ -1,3 +1,4 @@
+7zip
 amd-ucode
 base
 base-devel
@@ -43,6 +44,7 @@ pipewire-jack
 pipewire-pulse
 playerctl
 polkit-kde-agent
+poppler
 qt5-wayland
 qt6-wayland
 sddm
@@ -72,6 +74,7 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-nouveau
 zoxide
+yazi
 zram-generator
 zsh
 zsh-autosuggestions

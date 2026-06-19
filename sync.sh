@@ -19,5 +19,9 @@ copy ~/.config/wofi/config            wofi/.config/wofi/config
 copy ~/.config/wofi/style.css         wofi/.config/wofi/style.css
 copy ~/.config/dunst/dunstrc          dunst/.config/dunst/dunstrc
 copy ~/.config/starship.toml          starship/.config/starship.toml
+copy ~/.config/btop/btop.conf         btop/.config/btop/btop.conf
+copy ~/.config/btop/themes/catppuccin_mocha.theme btop/.config/btop/themes/catppuccin_mocha.theme
+copy ~/.config/yazi/theme.toml         yazi/.config/yazi/theme.toml
+copy ~/.config/yazi/flavors/catppuccin-mocha.yazi yazi/.config/yazi/flavors/catppuccin-mocha.yazi
 
 echo "✓ synced live configs into repo"
