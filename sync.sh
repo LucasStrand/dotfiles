@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")"
 
-copy() { mkdir -p "$(dirname "$2")"; cp -r "$1" "$2"; }
+copy() { mkdir -p "$(dirname "$2")"; rm -rf "$2"; cp -r "$1" "$2"; }
 
 copy ~/.config/hypr/hyprland.lua      hypr/.config/hypr/hyprland.lua
 copy ~/.config/hypr/hyprpaper.conf    hypr/.config/hypr/hyprpaper.conf
