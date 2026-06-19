@@ -15,6 +15,22 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- Acer X34 ultrawide (primary) on the LEFT at 0,0; Asus VG248 to its RIGHT.
+-- 3440 = ultrawide width, so the VG248 starts at x=3440.
+hl.monitor({
+    output   = "DP-3",
+    mode     = "preferred",
+    position = "0x0",
+    scale    = 1,
+})
+hl.monitor({
+    output   = "DP-2",
+    mode     = "preferred",
+    position = "3440x0",
+    scale    = 1,
+})
+
+-- Fallback for any other/new monitor: auto-place it.
 hl.monitor({
     output   = "",
     mode     = "preferred",
@@ -46,7 +62,8 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("dunst") --notifications
 	hl.exec_cmd(terminal)
 	hl.exec_cmd("nm-applet") --wifi tray icon
-	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("/home/shellwalker/.config/hypr/wallpaper.sh")
 end)
 
 
@@ -205,14 +222,23 @@ hl.config({
     },
 })
 
+------------------------------------
+---- MONITOR / PRIMARY WORKSPACE ----
+------------------------------------
+-- "Primary" monitor = Acer X34 ultrawide (DP-3): it holds workspace 1, where
+-- apps open by default. The Asus VG248 (DP-2) gets workspace 2.
+-- See https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+hl.workspace_rule({ workspace = "1", monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-2", default = true })
+
 ----------------
 ----  MISC  ----
 ----------------
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 0,     -- Disabled: hyprpaper.conf sets the wallpaper on both monitors
+        disable_hyprland_logo   = true,  -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
 
@@ -263,12 +289,13 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("uwsm stop"))
+hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen())  -- was "uwsm stop" (logout); disabled — caused NVIDIA logout black-screen
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/spotlight.sh"))  -- Spotlight search
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/spotlight.sh"))  -- Spotlight search
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

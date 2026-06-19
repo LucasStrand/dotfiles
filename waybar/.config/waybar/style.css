@@ -1,63 +1,125 @@
-/* ============================================================
- *  Waybar — Catppuccin Mocha (dark)
- * ============================================================ */
+/* Catppuccin Mocha — colorful pill bar (inspired by revaljonathan/Rice) */
+
+@define-color base    #1e1e2e;
+@define-color mantle  #181825;
+@define-color crust   #11111b;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color text     #cdd6f4;
+@define-color subtext  #a6adc8;
+
+@define-color rosewater #f5e0dc;
+@define-color pink   #f5c2e7;
+@define-color mauve  #cba6f7;
+@define-color red    #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach  #fab387;
+@define-color yellow #f9e2af;
+@define-color green  #a6e3a1;
+@define-color teal   #94e2d5;
+@define-color sky    #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue   #89b4fa;
+@define-color lavender #b4befe;
 
 * {
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: bold;
     min-height: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: #cdd6f4;
 }
 
-/* dark "pill" modules */
+/* Shared pill shape — every module is its own rounded segment */
+#custom-launcher,
 #workspaces,
-#window,
+#mpris,
+#custom-weather,
 #clock,
+#window,
+#cpu,
+#temperature,
+#memory,
 #pulseaudio,
 #network,
-#cpu,
-#memory,
-#tray {
-    background: #11111b;
-    border-radius: 12px;
-    padding: 2px 12px;
+#tray,
+#custom-power {
+    color: @base;
+    padding: 0 12px;
     margin: 0 3px;
+    border-radius: 12px;
 }
 
-/* workspaces */
+/* Launcher (arch logo) */
+#custom-launcher {
+    color: @base;
+    background: @mauve;
+    padding: 0 14px;
+    font-size: 16px;
+}
+
+/* Workspaces — dark pill, active = mauve */
+#workspaces {
+    background: @surface0;
+    padding: 0 4px;
+}
 #workspaces button {
-    color: #6c7086;
-    padding: 0 6px;
-    margin: 2px 2px;
-    border-radius: 8px;
+    color: @subtext;
+    background: transparent;
+    padding: 0 8px;
+    margin: 3px 2px;
+    border-radius: 9px;
 }
 #workspaces button.active {
-    color: #11111b;
-    background: #cba6f7;
+    color: @base;
+    background: @mauve;
 }
 #workspaces button.urgent {
-    color: #11111b;
-    background: #f38ba8;
+    color: @base;
+    background: @red;
 }
 #workspaces button:hover {
-    color: #cdd6f4;
-    background: #313244;
+    color: @text;
+    background: @surface1;
 }
 
-/* accent colours per module */
-#clock      { color: #cba6f7; }
-#pulseaudio { color: #f9e2af; }
-#network    { color: #94e2d5; }
-#cpu        { color: #89b4fa; }
-#memory     { color: #a6e3a1; }
-#window     { color: #bac2de; }
+/* Left cluster accents */
+#mpris          { background: @green; }
+#custom-weather { background: @blue; }
+#clock          { background: @mauve; }
 
-#pulseaudio.muted { color: #6c7086; }
+/* Center — focused window title */
+#window {
+    background: @teal;
+}
+/* Empty window title: hide the pill */
+window#waybar.empty #window {
+    background: transparent;
+}
 
-#tray > .passive { -gtk-icon-effect: dim; }
-#tray > .needs-attention { -gtk-icon-effect: highlight; }
+/* Right cluster accents */
+#cpu         { background: @pink; }
+#temperature { background: @maroon; }
+#temperature.critical { background: @red; color: @crust; }
+#memory      { background: @sapphire; }
+#pulseaudio  { background: @peach; }
+#pulseaudio.muted { background: @surface2; color: @subtext; }
+#network     { background: @lavender; }
+#network.disconnected { background: @surface2; color: @subtext; }
+
+#tray {
+    background: @surface0;
+    color: @text;
+}
+#tray menu {
+    color: @text;
+    background: @mantle;
+}
+
+#custom-power {
+    background: @red;
+}
