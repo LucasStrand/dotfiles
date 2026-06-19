@@ -349,8 +349,11 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
--- Hold SUPER (long press) to toggle the keybind cheat-sheet overlay
-hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh"), { long_press = true })
+-- Hold SUPER (long press) to toggle the keybind cheat-sheet overlay.
+-- Bare Super_L (no modmask) so the long-press timer actually applies; a quick
+-- tap is shorter than the threshold and won't trigger. non_consuming keeps
+-- SUPER working as the modifier for every other bind.
+hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh"), { long_press = true, non_consuming = true })
 
 
 --------------------------------
