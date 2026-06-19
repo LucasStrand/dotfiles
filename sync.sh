@@ -18,5 +18,6 @@ copy ~/.config/waybar/scripts/weather.sh waybar/.config/waybar/scripts/weather.s
 copy ~/.config/wofi/config            wofi/.config/wofi/config
 copy ~/.config/wofi/style.css         wofi/.config/wofi/style.css
 copy ~/.config/dunst/dunstrc          dunst/.config/dunst/dunstrc
+copy ~/.config/starship.toml          starship/.config/starship.toml
 
 echo "✓ synced live configs into repo"

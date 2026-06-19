@@ -48,6 +48,7 @@ qt6-wayland
 sddm
 slurp
 smartmontools
+starship
 sudo
 tmux
 tree

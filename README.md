@@ -12,6 +12,7 @@ Each top-level directory is a *stow package* that mirrors `$HOME`:
 | `kitty`   | Kitty terminal                            |
 | `fish`    | Fish shell                                |
 | `zsh`     | `.zshrc`                                   |
+| `starship`| Starship prompt (`starship.toml`)         |
 | `btop`    | btop system monitor                       |
 | `htop`    | htop                                      |
 | `misc`    | `mimeapps.list`, `dolphinrc`              |
@@ -25,7 +26,7 @@ git clone https://github.com/<user>/dotfiles ~/dotfiles
 cd ~/dotfiles
 
 # symlink configs into place (--adopt pulls in any pre-existing files, then `git checkout .` to keep repo versions)
-stow --adopt hypr kitty fish zsh btop htop misc
+stow --adopt hypr kitty fish zsh starship btop htop misc
 git checkout .
 
 # reinstall packages

@@ -116,3 +116,6 @@ eval "$(zoxide init zsh)"
 # fzf — Ctrl+R gives fuzzy history search, Ctrl+T fuzzy file finder
 eval "$(fzf --zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Starship prompt
+eval "$(starship init zsh)"
