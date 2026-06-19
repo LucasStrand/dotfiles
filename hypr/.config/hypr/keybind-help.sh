@@ -7,16 +7,17 @@
 
 cat <<'EOF' | wofi --dmenu --insensitive --prompt "Keybinds" --width 780 --height 620 >/dev/null 2>&1
   SUPER + Q                Open terminal (kitty)
-  SUPER + R                App launcher (wofi)
+  SUPER + R                App launcher (rofi)
   SUPER + E                File manager (dolphin)
   SUPER + C                Close active window
   SUPER + V                Toggle floating window
   SUPER + P                Pseudo-tile (dwindle)
-  SUPER + J                Toggle split direction
+  SUPER + T                Toggle split direction
   SUPER + Space            Show this keybind cheatsheet
-  SUPER + M                Exit Hyprland (log out)
+  SUPER + M                Toggle fullscreen
   ───────────────────────────────────────────────
-  SUPER + ← ↑ → ↓          Move focus between windows
+  SUPER + H J K L          Move focus (vim: left/down/up/right)
+  SUPER + ← ↓ ↑ →          Move focus (also works)
   SUPER + LMB drag         Move window
   SUPER + RMB drag         Resize window
   ───────────────────────────────────────────────
