@@ -353,7 +353,8 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 -- Bare Super_L (no modmask) so the long-press timer actually applies; a quick
 -- tap is shorter than the threshold and won't trigger. non_consuming keeps
 -- SUPER working as the modifier for every other bind.
-hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh"), { long_press = true, non_consuming = true })
+hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh show"), { long_press = true, non_consuming = true })
+hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh hide"), { release = true, non_consuming = true })
 
 
 --------------------------------

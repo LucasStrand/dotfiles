@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
-# Toggle the floating keybind cheat-sheet overlay.
-# Bound to a long SUPER hold in hyprland.lua. Press any key, or hold SUPER
-# again, to dismiss. A window rule floats/sizes it (class "cheatsheet").
+# Keybind cheat-sheet overlay (floating kitty, class "cheatsheet").
+#   show   - open it if not already open   (bound to long SUPER hold)
+#   hide   - close it                       (bound to SUPER release)
+#   toggle - open/close                     (default, for manual use)
 
 CLASS=cheatsheet
 
-# If it's already open, holding SUPER again closes it.
-if pkill -f "kitty --class $CLASS"; then
-    exit 0
-fi
+launch() {
+    exec kitty --class "$CLASS" \
+        -o font_size=10 \
+        -o window_padding_width=14 \
+        sh -c "$HOME/.local/bin/keybinds; read -rsn1 _"
+}
 
-# `read` keeps the window open (blocks on kitty's pty) until a key is pressed;
-# `sh -c` (not `-e`) avoids leaving an interactive shell prompt.
-exec kitty --class "$CLASS" \
-    -o font_size=10 \
-    -o window_padding_width=14 \
-    sh -c "$HOME/.local/bin/keybinds; read -rsn1 _"
+case "$1" in
+    show) pgrep -f "kitty --class $CLASS" >/dev/null || launch ;;
+    hide) pkill -f "kitty --class $CLASS" ;;
+    *)    pkill -f "kitty --class $CLASS" || launch ;;
+esac
