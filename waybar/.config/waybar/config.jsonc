@@ -7,15 +7,9 @@
     "margin-left": 10,
     "margin-right": 10,
 
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "mpris", "custom/weather", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "mpris", "custom/weather", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["group/stats", "pulseaudio", "network", "tray", "custom/power"],
-
-    "custom/launcher": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "/home/shellwalker/.config/hypr/spotlight.sh"
-    },
 
     "hyprland/workspaces": {
         "format": "{id}",
@@ -23,8 +17,8 @@
     },
 
     "mpris": {
-        "format": "{player_icon}  {dynamic}",
-        "format-paused": "{status_icon}  {dynamic}",
+        "format": "<span color='#a6e3a1'>{player_icon}</span>  {dynamic}",
+        "format-paused": "<span color='#a6e3a1'>{status_icon}</span>  {dynamic}",
         "player-icons": { "default": "", "spotify": "" },
         "status-icons": { "paused": "" },
         "dynamic-order": ["title", "artist"],
@@ -40,8 +34,8 @@
     },
 
     "clock": {
-        "format": "  {:%H:%M}",
-        "format-alt": "  {:%a %d %b %Y}",
+        "format": "{:%a %d/%b  %H:%M}",
+        "format-alt": "{:%H:%M:%S}",
         "tooltip-format": "<tt>{calendar}</tt>"
     },
 
