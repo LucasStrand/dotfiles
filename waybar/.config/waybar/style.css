@@ -9,7 +9,6 @@
 @define-color text     #cdd6f4;
 @define-color subtext  #a6adc8;
 
-@define-color rosewater #f5e0dc;
 @define-color pink   #f5c2e7;
 @define-color mauve  #cba6f7;
 @define-color red    #f38ba8;
@@ -18,7 +17,6 @@
 @define-color yellow #f9e2af;
 @define-color green  #a6e3a1;
 @define-color teal   #94e2d5;
-@define-color sky    #89dceb;
 @define-color sapphire #74c7ec;
 @define-color blue   #89b4fa;
 @define-color lavender #b4befe;
@@ -34,29 +32,26 @@ window#waybar {
     background: transparent;
 }
 
-/* Shared pill shape — every module is its own rounded segment */
+/* Shared pill shape */
 #custom-launcher,
 #workspaces,
 #mpris,
 #custom-weather,
-#clock,
 #window,
-#cpu,
-#temperature,
-#memory,
+#clock,
+#stats,
 #pulseaudio,
 #network,
 #tray,
 #custom-power {
     color: @base;
     padding: 0 12px;
-    margin: 0 3px;
+    margin: 3px 3px;
     border-radius: 12px;
 }
 
-/* Launcher (arch logo) */
+/* Launcher (arch logo) — opens rofi */
 #custom-launcher {
-    color: @base;
     background: @mauve;
     padding: 0 14px;
     font-size: 16px;
@@ -87,25 +82,29 @@ window#waybar {
     background: @surface1;
 }
 
-/* Left cluster accents */
+/* Left cluster */
 #mpris          { background: @green; }
 #custom-weather { background: @blue; }
-#clock          { background: @mauve; }
+#window         { background: @teal; }
+#window.empty   { background: transparent; padding: 0; margin: 0; }
 
-/* Center — focused window title */
-#window {
-    background: @teal;
+/* Centre — clock */
+#clock { background: @mauve; }
+
+/* Right: system stats grouped into one pill */
+#stats {
+    background: @pink;
+    padding: 0 12px;
 }
-/* Empty window title: hide the pill */
-window#waybar.empty #window {
+#stats #cpu,
+#stats #temperature,
+#stats #memory {
+    color: @base;
     background: transparent;
+    padding: 0 5px;
 }
+#temperature.critical { color: @crust; }
 
-/* Right cluster accents */
-#cpu         { background: @pink; }
-#temperature { background: @maroon; }
-#temperature.critical { background: @red; color: @crust; }
-#memory      { background: @sapphire; }
 #pulseaudio  { background: @peach; }
 #pulseaudio.muted { background: @surface2; color: @subtext; }
 #network     { background: @lavender; }
@@ -115,11 +114,5 @@ window#waybar.empty #window {
     background: @surface0;
     color: @text;
 }
-#tray menu {
-    color: @text;
-    background: @mantle;
-}
 
-#custom-power {
-    background: @red;
-}
+#custom-power { background: @red; }

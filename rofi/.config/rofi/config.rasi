@@ -1,0 +1,117 @@
+/* ============================================================
+ *  rofi launcher — Catppuccin Mocha
+ *  Tuned to match our setup: mauve accent (like the waybar's
+ *  active-workspace pill) over a dark Mocha surface.
+ *  Auto-loaded by `rofi -show drun`.
+ * ============================================================ */
+
+configuration {
+    modi:                "drun,run";
+    show-icons:          true;
+    icon-theme:          "Papirus-Dark";
+    terminal:            "kitty";
+    drun-display-format: "{name}  [<span weight='light' size='small'>({generic})</span>]";
+    drun-match-fields:   "name,generic,exec,categories,keywords";
+    display-drun:        "Launch";
+    display-run:         "Run";
+}
+
+/* ── Palette ──────────────────────────────────────────────── */
+* {
+    bg0:     #1e1e2e;   /* base   */
+    bg1:     #181825;   /* mantle */
+    bg2:     #313244;   /* surface0 */
+    bg3:     #45475a;   /* surface1 */
+    fg0:     #cdd6f4;   /* text   */
+    fg1:     #bac2de;   /* subtext1 */
+    fg2:     #6c7086;   /* overlay0 */
+    mauve:   #cba6f7;
+    pink:    #f5c2e7;
+
+    accent:           @mauve;
+    background-color: transparent;
+    text-color:       @fg0;
+}
+
+/* ── Window ───────────────────────────────────────────────── */
+window {
+    width:            620px;
+    background-color: @bg1;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    12px;
+    padding:          0;
+}
+
+mainbox {
+    background-color: transparent;
+    children:         [ inputbar, listview ];
+    spacing:          10px;
+    padding:          14px;
+}
+
+/* ── Input bar ────────────────────────────────────────────── */
+inputbar {
+    background-color: @bg2;
+    border-radius:    10px;
+    padding:          11px 14px;
+    children:         [ prompt, entry ];
+    spacing:          8px;
+}
+
+prompt {
+    text-color: @accent;
+    font:       "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    text-color:        @fg0;
+    placeholder:       "Search…";
+    placeholder-color: @fg2;
+    font:              "JetBrainsMono Nerd Font 12";
+}
+
+/* ── List view ────────────────────────────────────────────── */
+listview {
+    background-color: transparent;
+    columns:          2;
+    lines:            8;
+    spacing:          4px;
+    scrollbar:        false;
+    fixed-height:     false;
+}
+
+/* ── Elements ─────────────────────────────────────────────── */
+element {
+    background-color: @bg1;
+    text-color:       @fg1;
+    border-radius:    8px;
+    padding:          8px 10px;
+    spacing:          9px;
+    orientation:      horizontal;
+}
+
+/* Explicit colour for EVERY state, otherwise rofi's built-in default
+   (Solarized cream) leaks through on alternate rows -> the "yellow" stripes. */
+element normal.normal    { background-color: @bg1;    text-color: @fg1;   }
+element alternate.normal { background-color: @bg1;    text-color: @fg1;   }
+element normal.urgent    { background-color: @bg1;    text-color: @pink;  }
+element alternate.urgent { background-color: @bg1;    text-color: @pink;  }
+element normal.active    { background-color: @bg1;    text-color: @mauve; }
+element alternate.active { background-color: @bg1;    text-color: @mauve; }
+element selected.normal  { background-color: @accent; text-color: @bg0;   }
+element selected.urgent  { background-color: @pink;   text-color: @bg0;   }
+element selected.active  { background-color: @mauve;  text-color: @bg0;   }
+
+element-icon {
+    background-color: transparent;
+    size:             22px;
+    cursor:           inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    font:             "JetBrainsMono Nerd Font 12";
+}
