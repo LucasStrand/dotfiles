@@ -84,12 +84,15 @@ window#waybar {
     margin: 0;
 }
 
-/* System stats — one dark pill, children transparent */
-#stats #custom-sysicon,
+/* System stats — one dark pill; values + slide-out labels transparent */
 #stats #cpu,
 #stats #temperature,
 #stats #memory,
 #stats #custom-gpu,
+#stats #custom-cpulabel,
+#stats #custom-templabel,
+#stats #custom-memlabel,
+#stats #custom-gpulabel,
 #vol #pulseaudio,
 #net #network,
 #net #network\.info {
@@ -98,6 +101,15 @@ window#waybar {
     padding: 0 6px;
 }
 #temperature.critical { color: @red; }
+
+/* slide-out stat labels read as a softer caption */
+#stats #custom-cpulabel,
+#stats #custom-templabel,
+#stats #custom-memlabel,
+#stats #custom-gpulabel {
+    color: @subtext;
+    padding: 0 8px 0 2px;
+}
 
 /* Controls — icon only; hover reveals the slider / details (drawer) */
 #pulseaudio.muted     { color: @overlay; }
