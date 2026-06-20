@@ -353,14 +353,8 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
--- Hold SUPER (long press) to toggle the keybind cheat-sheet overlay.
--- Bare Super_L (no modmask) so the long-press timer actually applies; a quick
--- tap is shorter than the threshold and won't trigger. non_consuming keeps
--- SUPER working as the modifier for every other bind.
-hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh show"), { long_press = true, non_consuming = true })
--- Release SUPER -> hide. Uses the modifier form (SUPER + Super_L) — the proven
--- "on super release" pattern; a bare-key release bind did not fire.
-hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh hide"), { release = true })
+-- (Keybind cheat sheet: run `keybinds` in a terminal. The hold-SUPER overlay
+--  was removed.)
 
 -- Resize submap: SUPER + R enters; H/J/K/L resize the focused window
 -- (hold to repeat); Enter or Escape finishes.
@@ -423,15 +417,4 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
-})
-
--- Keybind cheat-sheet overlay (floating, top-right corner)
-hl.window_rule({
-    name  = "cheatsheet-overlay",
-    match = { class = "cheatsheet" },
-
-    float    = true,
-    no_focus = true,
-    size     = "600 800",
-    move     = "monitor_w-640 60",
 })

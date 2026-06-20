@@ -17,7 +17,8 @@
     ],
     "modules-right": [
         "group/stats",
-        "group/controls",
+        "group/vol",
+        "group/net",
         "custom/updates",
         "tray",
         "custom/power"
@@ -128,11 +129,37 @@
         "tooltip": false,
         "on-click": "kitty --hold -e yay -Syu"
     },
-    "group/controls": {
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "network#info": {
+        "format-wifi": "{essid}",
+        "format-ethernet": "{ifname}",
+        "format-disconnected": "offline",
+        "tooltip": false
+    },
+    "group/vol": {
         "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
         "modules": [
             "pulseaudio",
-            "network"
+            "pulseaudio/slider"
+        ]
+    },
+    "group/net": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "network",
+            "network#info"
         ]
     }
 }

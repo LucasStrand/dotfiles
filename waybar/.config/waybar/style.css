@@ -33,7 +33,8 @@ window#waybar {
 #window,
 #clock,
 #stats,
-#controls,
+#vol,
+#net,
 #tray,
 #custom-updates,
 #custom-power {
@@ -88,16 +89,33 @@ window#waybar {
 #stats #temperature,
 #stats #memory,
 #stats #custom-gpu,
-#controls #pulseaudio,
-#controls #network {
+#vol #pulseaudio,
+#net #network,
+#net #network\.info {
     color: @text;
     background: transparent;
     padding: 0 6px;
 }
 #temperature.critical { color: @red; }
 
-/* Controls */
+/* Controls — icon only; hover reveals the slider / details (drawer) */
 #pulseaudio.muted     { color: @overlay; }
 #network.disconnected { color: @overlay; }
+
+/* Volume slider that slides out of the #vol drawer on hover */
+#vol slider {
+    background: transparent;
+}
+#vol trough {
+    background: @surface1;
+    min-width: 90px;
+    min-height: 6px;
+    border-radius: 6px;
+    margin: 0 8px;
+}
+#vol highlight {
+    background: @mauve;
+    border-radius: 6px;
+}
 #tray { color: @text; }
 #custom-power { color: @text; }
