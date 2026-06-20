@@ -18,7 +18,7 @@
     "modules-right": [
         "group/stats",
         "group/vol",
-        "group/net",
+        "network",
         "group/upd",
         "tray",
         "custom/power"
@@ -101,10 +101,11 @@
         "tooltip-format": "Volume  {volume}%   ({desc})"
     },
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-disconnected": "",
-        "tooltip-format": "{ifname}   {ipaddr}"
+        "format-wifi": "  {essid}   {ipaddr}",
+        "format-ethernet": "  {ifname}   {ipaddr}",
+        "format-disconnected": "  offline",
+        "tooltip-format": "{ifname}   {ipaddr}",
+        "tooltip": false
     },
     "tray": {
         "spacing": 10
@@ -130,12 +131,6 @@
         "max": 100,
         "orientation": "horizontal"
     },
-    "network#info": {
-        "format-wifi": "  {essid}   {ipaddr}",
-        "format-ethernet": "  {ifname}   {ipaddr}",
-        "format-disconnected": "offline",
-        "tooltip": false
-    },
     "group/vol": {
         "orientation": "horizontal",
         "drawer": {
@@ -145,17 +140,6 @@
         "modules": [
             "pulseaudio",
             "pulseaudio/slider"
-        ]
-    },
-    "group/net": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 250,
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "network",
-            "network#info"
         ]
     },
     "custom/cpulabel": {
