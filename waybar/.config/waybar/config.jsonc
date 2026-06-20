@@ -65,7 +65,12 @@
     },
     "group/stats": {
         "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
         "modules": [
+            "custom/sysicon",
             "cpu",
             "temperature",
             "memory",
@@ -135,8 +140,8 @@
         "orientation": "horizontal"
     },
     "network#info": {
-        "format-wifi": "{essid}",
-        "format-ethernet": "{ifname}",
+        "format-wifi": "{essid}   {ipaddr}",
+        "format-ethernet": "{ifname}   {ipaddr}",
         "format-disconnected": "offline",
         "tooltip": false
     },
@@ -161,5 +166,9 @@
             "network",
             "network#info"
         ]
+    },
+    "custom/sysicon": {
+        "format": "",
+        "tooltip": false
     }
 }

@@ -85,6 +85,7 @@ window#waybar {
 }
 
 /* System stats — one dark pill, children transparent */
+#stats #custom-sysicon,
 #stats #cpu,
 #stats #temperature,
 #stats #memory,
