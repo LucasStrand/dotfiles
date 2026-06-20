@@ -292,7 +292,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen())  -- was "uwsm stop" (logout); disabled — caused NVIDIA logout black-screen
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/spotlight.sh"))  -- Spotlight search
+hl.bind(mainMod .. " + R", hl.dsp.submap("resize"))  -- resize mode: H/J/K/L resize, Enter/Esc to finish (launcher is on SUPER+Space)
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))    -- dwindle togglesplit (moved off J so J = vim focus-down)
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/spotlight.sh"))  -- Spotlight search
@@ -357,6 +357,18 @@ hl.bind("Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh
 -- Release SUPER -> hide. Uses the modifier form (SUPER + Super_L) — the proven
 -- "on super release" pattern; a bare-key release bind did not fire.
 hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd("/home/shellwalker/.config/hypr/cheatsheet.sh hide"), { release = true })
+
+-- Resize submap: SUPER + R enters; H/J/K/L resize the focused window
+-- (hold to repeat); Enter or Escape finishes.
+local RZ = 40
+hl.define_submap("resize", function()
+    hl.bind("H", hl.dsp.window.resize({ x = -RZ, y = 0, relative = true }), { repeating = true })
+    hl.bind("L", hl.dsp.window.resize({ x =  RZ, y = 0, relative = true }), { repeating = true })
+    hl.bind("K", hl.dsp.window.resize({ x = 0, y = -RZ, relative = true }), { repeating = true })
+    hl.bind("J", hl.dsp.window.resize({ x = 0, y =  RZ, relative = true }), { repeating = true })
+    hl.bind("escape", hl.dsp.submap("reset"))
+    hl.bind("return", hl.dsp.submap("reset"))
+end)
 
 
 --------------------------------
