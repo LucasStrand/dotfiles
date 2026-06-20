@@ -18,7 +18,7 @@
     "modules-right": [
         "group/stats",
         "group/vol",
-        "network",
+        "group/net",
         "group/upd",
         "tray",
         "custom/power"
@@ -101,9 +101,9 @@
         "tooltip-format": "Volume  {volume}%   ({desc})"
     },
     "network": {
-        "format-wifi": "  {essid}   {ipaddr}",
-        "format-ethernet": "  {ifname}   {ipaddr}",
-        "format-disconnected": "  offline",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
         "tooltip-format": "{ifname}   {ipaddr}",
         "tooltip": false,
         "on-click": "nm-connection-editor"
@@ -226,6 +226,23 @@
         "modules": [
             "custom/updates",
             "custom/updateslabel"
+        ]
+    },
+    "network#info": {
+        "format-ethernet": "{ifname}   {ipaddr}",
+        "format-wifi": "{essid}   {ipaddr}",
+        "format-disconnected": "offline",
+        "tooltip": false
+    },
+    "group/net": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "network",
+            "network#info"
         ]
     }
 }

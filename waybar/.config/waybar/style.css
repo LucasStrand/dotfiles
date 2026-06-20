@@ -34,7 +34,7 @@ window#waybar {
 #clock,
 #stats,
 #vol,
-#network,
+#net,
 #upd,
 #tray,
 #custom-power {
@@ -94,6 +94,8 @@ window#waybar {
 #stats #custom-memlabel,
 #stats #custom-gpulabel,
 #vol #pulseaudio,
+#net #network,
+#net #network\.info,
 #upd #custom-updates,
 #upd #custom-updateslabel {
     color: @text;
