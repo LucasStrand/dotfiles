@@ -141,7 +141,8 @@
         "modules": [
             "pulseaudio",
             "pulseaudio/slider"
-        ]
+        ],
+        "spacing": 0
     },
     "custom/cpulabel": {
         "exec": "echo 'CPU usage'",
@@ -243,6 +244,7 @@
         "modules": [
             "network",
             "network#info"
-        ]
+        ],
+        "spacing": 0
     }
 }

@@ -113,7 +113,13 @@ window#waybar {
     padding: 0 8px 0 2px;
 }
 
-/* Controls — icon only; hover reveals the slider / details (drawer) */
+/* Controls — icon only; hover reveals the slider / details (drawer).
+   The drawer reserves a little space on the reveal side, so nudge the
+   collapsed icon back to centre. */
+#vol #pulseaudio,
+#net #network {
+    margin-left: -7px;
+}
 #pulseaudio.muted     { color: @overlay; }
 #network.disconnected { color: @overlay; }
 
