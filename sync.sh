@@ -20,6 +20,7 @@ copy ~/.config/waybar/scripts/weather.sh waybar/.config/waybar/scripts/weather.s
 copy ~/.config/waybar/scripts/gpu.sh     waybar/.config/waybar/scripts/gpu.sh
 copy ~/.config/waybar/scripts/updates.sh waybar/.config/waybar/scripts/updates.sh
 copy ~/.config/rofi/config.rasi       rofi/.config/rofi/config.rasi
+copy ~/.config/cava/config            cava/.config/cava/config
 copy ~/.config/dunst/dunstrc          dunst/.config/dunst/dunstrc
 copy ~/.config/starship.toml          starship/.config/starship.toml
 copy ~/.config/btop/btop.conf         btop/.config/btop/btop.conf

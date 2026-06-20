@@ -33,8 +33,7 @@ window#waybar {
 #window,
 #clock,
 #stats,
-#pulseaudio,
-#network,
+#controls,
 #tray,
 #custom-updates,
 #custom-power {
@@ -88,7 +87,9 @@ window#waybar {
 #stats #cpu,
 #stats #temperature,
 #stats #memory,
-#stats #custom-gpu {
+#stats #custom-gpu,
+#controls #pulseaudio,
+#controls #network {
     color: @text;
     background: transparent;
     padding: 0 6px;
