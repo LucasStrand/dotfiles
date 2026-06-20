@@ -17,6 +17,8 @@ copy ~/.config/kitty/kitty.conf       kitty/.config/kitty/kitty.conf
 copy ~/.config/waybar/config.jsonc    waybar/.config/waybar/config.jsonc
 copy ~/.config/waybar/style.css       waybar/.config/waybar/style.css
 copy ~/.config/waybar/scripts/weather.sh waybar/.config/waybar/scripts/weather.sh
+copy ~/.config/waybar/scripts/gpu.sh     waybar/.config/waybar/scripts/gpu.sh
+copy ~/.config/waybar/scripts/updates.sh waybar/.config/waybar/scripts/updates.sh
 copy ~/.config/rofi/config.rasi       rofi/.config/rofi/config.rasi
 copy ~/.config/dunst/dunstrc          dunst/.config/dunst/dunstrc
 copy ~/.config/starship.toml          starship/.config/starship.toml

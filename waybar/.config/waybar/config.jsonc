@@ -19,6 +19,7 @@
         "group/stats",
         "pulseaudio",
         "network",
+        "custom/updates",
         "tray",
         "custom/power"
     ],
@@ -64,7 +65,8 @@
         "modules": [
             "cpu",
             "temperature",
-            "memory"
+            "memory",
+            "custom/gpu"
         ]
     },
     "cpu": {
@@ -108,5 +110,18 @@
     "custom/power": {
         "format": "  shellwalker",
         "tooltip": false
+    },
+    "custom/gpu": {
+        "exec": "/home/shellwalker/.config/waybar/scripts/gpu.sh",
+        "interval": 3,
+        "format": "{}",
+        "tooltip": false
+    },
+    "custom/updates": {
+        "exec": "/home/shellwalker/.config/waybar/scripts/updates.sh",
+        "interval": 1800,
+        "format": "{}",
+        "tooltip": false,
+        "on-click": "kitty --hold -e yay -Syu"
     }
 }

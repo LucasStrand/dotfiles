@@ -36,6 +36,7 @@ window#waybar {
 #pulseaudio,
 #network,
 #tray,
+#custom-updates,
 #custom-power {
     background: @crust;
     color: @text;
@@ -86,7 +87,8 @@ window#waybar {
 /* System stats — one dark pill, children transparent */
 #stats #cpu,
 #stats #temperature,
-#stats #memory {
+#stats #memory,
+#stats #custom-gpu {
     color: @text;
     background: transparent;
     padding: 0 6px;
