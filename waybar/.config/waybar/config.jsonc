@@ -19,7 +19,7 @@
         "group/stats",
         "group/vol",
         "group/net",
-        "custom/updates",
+        "group/upd",
         "tray",
         "custom/power"
     ],
@@ -131,8 +131,8 @@
         "orientation": "horizontal"
     },
     "network#info": {
-        "format-wifi": "{essid}   {ipaddr}",
-        "format-ethernet": "{ifname}   {ipaddr}",
+        "format-wifi": "  {essid}   {ipaddr}",
+        "format-ethernet": "  {ifname}   {ipaddr}",
         "format-disconnected": "offline",
         "tooltip": false
     },
@@ -224,6 +224,23 @@
         "modules": [
             "custom/gpu",
             "custom/gpulabel"
+        ]
+    },
+    "custom/updateslabel": {
+        "exec": "/home/shellwalker/.config/waybar/scripts/updateslabel.sh",
+        "interval": 5,
+        "format": "{}",
+        "tooltip": false
+    },
+    "group/upd": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 250,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/updates",
+            "custom/updateslabel"
         ]
     }
 }

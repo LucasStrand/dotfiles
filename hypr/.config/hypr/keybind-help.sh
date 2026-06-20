@@ -18,7 +18,7 @@ cat <<'EOF' | wofi --dmenu --insensitive --prompt "Keybinds" --width 780 --heigh
   ───────────────────────────────────────────────
   SUPER + H J K L          Move focus (vim: left/down/up/right)
   SUPER + ← ↓ ↑ →          Move focus (also works)
-  SUPER + SHIFT + H J K L  Re-tile (L/R side-by-side, U/D stacked)
+  SUPER + SHIFT + H J K L  Move/swap window (vim directions)
   SUPER + LMB drag         Move window
   SUPER + RMB drag         Resize window
   ───────────────────────────────────────────────

@@ -38,7 +38,7 @@ row "SUPER + R"               "Resize mode: H J K L, Enter/Esc to finish"
 
 section "Focus  (vim keys or arrows)" "$teal"
 row "SUPER + H J K L"         "Move focus      left / down / up / right"
-row "SUPER + SHIFT + H J K L" "Re-tile: side-by-side / stacked"
+row "SUPER + SHIFT + H J K L" "Move / swap the window"
 
 section "Workspaces" "$blue"
 row "SUPER + 1-0"             "Switch to workspace 1-10"

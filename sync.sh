@@ -10,7 +10,6 @@ copy ~/.config/hypr/hyprland.lua      hypr/.config/hypr/hyprland.lua
 copy ~/.config/hypr/hyprpaper.conf    hypr/.config/hypr/hyprpaper.conf
 copy ~/.config/hypr/wallpaper.sh      hypr/.config/hypr/wallpaper.sh
 copy ~/.config/hypr/spotlight.sh      hypr/.config/hypr/spotlight.sh
-copy ~/.config/hypr/retile.sh        hypr/.config/hypr/retile.sh
 copy ~/.config/hypr/keybind-help.sh   hypr/.config/hypr/keybind-help.sh
 copy ~/.local/bin/keybinds            bin/.local/bin/keybinds
 copy ~/.config/kitty/kitty.conf       kitty/.config/kitty/kitty.conf
@@ -19,6 +18,7 @@ copy ~/.config/waybar/style.css       waybar/.config/waybar/style.css
 copy ~/.config/waybar/scripts/weather.sh waybar/.config/waybar/scripts/weather.sh
 copy ~/.config/waybar/scripts/gpu.sh     waybar/.config/waybar/scripts/gpu.sh
 copy ~/.config/waybar/scripts/updates.sh waybar/.config/waybar/scripts/updates.sh
+copy ~/.config/waybar/scripts/updateslabel.sh waybar/.config/waybar/scripts/updateslabel.sh
 copy ~/.config/rofi/config.rasi       rofi/.config/rofi/config.rasi
 copy ~/.config/cava/config            cava/.config/cava/config
 copy ~/.config/dunst/dunstrc          dunst/.config/dunst/dunstrc

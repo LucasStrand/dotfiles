@@ -35,8 +35,8 @@ window#waybar {
 #stats,
 #vol,
 #net,
+#upd,
 #tray,
-#custom-updates,
 #custom-power {
     background: @crust;
     color: @text;
@@ -95,7 +95,9 @@ window#waybar {
 #stats #custom-gpulabel,
 #vol #pulseaudio,
 #net #network,
-#net #network\.info {
+#net #network\.info,
+#upd #custom-updates,
+#upd #custom-updateslabel {
     color: @text;
     background: transparent;
     padding: 0 6px;
