@@ -61,7 +61,6 @@ local menu        = "wofi --show drun"
 hl.on("hyprland.start", function () 
 	hl.exec_cmd("dunst") --notifications
 	hl.exec_cmd(terminal)
-	hl.exec_cmd("nm-applet") --wifi tray icon
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("/home/shellwalker/.config/hypr/wallpaper.sh")
 end)

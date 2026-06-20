@@ -105,7 +105,8 @@
         "format-ethernet": "  {ifname}   {ipaddr}",
         "format-disconnected": "  offline",
         "tooltip-format": "{ifname}   {ipaddr}",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "nm-connection-editor"
     },
     "tray": {
         "spacing": 10
