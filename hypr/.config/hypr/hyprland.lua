@@ -76,6 +76,10 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
+-- Catppuccin Mocha (dark) cursor — installed in ~/.local/share/icons
+hl.env("XCURSOR_THEME", "catppuccin-mocha-dark-cursors")
+hl.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
+
 -- NVIDIA proprietary driver (GTX 1080 / 580xx). See https://wiki.hypr.land/Nvidia/
 hl.env("LIBVA_DRIVER_NAME", "nvidia")           -- hardware video decode (VA-API)
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")   -- GLX vendor for Xwayland apps
